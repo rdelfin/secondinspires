@@ -4,7 +4,7 @@ import { UserOutlined, LaptopOutlined, NotificationOutlined } from '@ant-design/
 import './App.less';
 
 const { SubMenu } = Menu;
-const { Header, Content, Footer, Sider } = Layout;
+const { Header, Content, Sider } = Layout;
 
 const App: FC = () => (
     <Layout className="layout">
@@ -47,8 +47,6 @@ const App: FC = () => (
             <Layout style={{ padding: '0 24px 24px' }}>
                 <Breadcrumb style={{ margin: '16px 0' }}>
                     <Breadcrumb.Item>Home</Breadcrumb.Item>
-                    <Breadcrumb.Item>List</Breadcrumb.Item>
-                    <Breadcrumb.Item>App</Breadcrumb.Item>
                 </Breadcrumb>
                 <Content
                     className="site-layout-background"
@@ -58,7 +56,7 @@ const App: FC = () => (
                             minHeight: 280,
                     }}
                 >
-                    Content
+                    Welcome to Second Robotics™.
                 </Content>
             </Layout>
         </Layout>
