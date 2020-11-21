@@ -1,10 +1,6 @@
 import React, { FC } from "react";
 import { Layout, Menu, Divider, Breadcrumb, PageHeader } from "antd";
-import {
-  UserOutlined,
-  LaptopOutlined,
-  NotificationOutlined,
-} from "@ant-design/icons";
+import { UserOutlined } from "@ant-design/icons";
 import "./App.less";
 
 const { SubMenu } = Menu;
