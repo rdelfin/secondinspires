@@ -1,0 +1,8 @@
+*.js
+.gitignore
+.git
+node_modules/
+*.txt
+*.ico
+*.png
+*.svg
