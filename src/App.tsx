@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { Layout, Menu, Breadcrumb, PageHeader } from "antd";
+import { Layout, Menu, Divider, Breadcrumb, PageHeader } from "antd";
 import {
   UserOutlined,
   LaptopOutlined,
@@ -48,6 +48,9 @@ const App: FC = () => (
             title="Welcome"
             subTitle="to SECOND robotics"
           />
+          <Divider orientation="left">News</Divider>
+          <Divider orientation="left">Memes</Divider>
+          <Divider orientation="left">More Memes</Divider>
         </Content>
       </Layout>
     </Layout>
