@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { Layout, Menu, Breadcrumb } from 'antd';
+import { Layout, Menu, Breadcrumb, PageHeader } from 'antd';
 import { UserOutlined, LaptopOutlined, NotificationOutlined } from '@ant-design/icons';
 import './App.less';
 
@@ -56,7 +56,11 @@ const App: FC = () => (
               minHeight: 280,
           }}
         >
-          Welcome to Second Robotics™.
+            <PageHeader
+              className="site-page-header"
+              title="Welcome"
+              subTitle="to SECOND robotics"
+            />
         </Content>
       </Layout>
     </Layout>
