@@ -1,19 +1,21 @@
-import React, { FC } from "react";
-import { Divider, PageHeader } from "antd";
-import "./App.less";
-import Page from "./Page";
+import React, { Component } from "react";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 
-const App: FC = () => (
-  <Page>
-    <PageHeader
-      className="site-page-header"
-      title="Welcome"
-      subTitle="to SECOND robotics"
-    />
-    <Divider orientation="left">News</Divider>
-    <Divider orientation="left">Memes</Divider>
-    <Divider orientation="left">More Memes</Divider>
-  </Page>
-);
+import Home from "./Home";
+import News from "./News";
+
+class App extends Component {
+  render() {
+    return (
+      <BrowserRouter>
+        <Switch>
+          <Route path="/" component={Home} exact />
+          <Route path="/news" component={News} exact />
+          <Route component={Error} />
+        </Switch>
+      </BrowserRouter>
+    );
+  }
+}
 
 export default App;
