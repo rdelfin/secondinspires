@@ -4,40 +4,41 @@ import { UserOutlined } from "@ant-design/icons";
 import "./App.less";
 
 const { SubMenu } = Menu;
-const { Header, Content, Sider } = Layout;
+const { Footer, Header, Content, Sider } = Layout;
 
 const App: FC = () => (
-  <Layout className="layout">
-    <Header>
+  <Layout>
+    <Sider
+      breakpoint="lg"
+      collapsedWidth="0"
+      onBreakpoint={(broken) => {
+        console.log(broken);
+      }}
+      onCollapse={(collapsed, type) => {
+        console.log(collapsed, type);
+      }}
+    >
       <div className="logo" />
-      <Menu theme="dark" mode="horizontal" defaultSelectedKeys={["2"]}>
-        <Menu.Item key="1">Home</Menu.Item>
+      <Menu
+        theme="dark"
+        mode="inline"
+        defaultSelectedKeys={["1"]}
+        defaultOpenKeys={["sub1"]}
+      >
+        <SubMenu key="sub1" icon={<UserOutlined />} title="Home">
+          <Menu.Item key="1">Home</Menu.Item>
+        </SubMenu>
       </Menu>
-    </Header>
+    </Sider>
     <Layout>
-      <Sider width={200} className="site-layout-background">
-        <Menu
-          mode="inline"
-          defaultSelectedKeys={["1"]}
-          defaultOpenKeys={["sub1"]}
-          style={{ height: "100%", borderRight: 0 }}
-        >
-          <SubMenu key="sub1" icon={<UserOutlined />} title="Home">
-            <Menu.Item key="1">Home</Menu.Item>
-          </SubMenu>
-        </Menu>
-      </Sider>
-      <Layout style={{ padding: "0 24px 24px" }}>
-        <Breadcrumb style={{ margin: "16px 0" }}>
-          <Breadcrumb.Item>Home</Breadcrumb.Item>
-        </Breadcrumb>
-        <Content
+      <Header
+        className="site-layout-sub-header-background"
+        style={{ padding: 0 }}
+      />
+      <Content style={{ margin: "24px 16px 0" }}>
+        <div
           className="site-layout-background"
-          style={{
-            padding: 24,
-            margin: 0,
-            minHeight: 280,
-          }}
+          style={{ padding: 24, minHeight: 360 }}
         >
           <PageHeader
             className="site-page-header"
@@ -47,8 +48,9 @@ const App: FC = () => (
           <Divider orientation="left">News</Divider>
           <Divider orientation="left">Memes</Divider>
           <Divider orientation="left">More Memes</Divider>
-        </Content>
-      </Layout>
+        </div>
+      </Content>
+      <Footer style={{ textAlign: "center" }}>Ricardo Delfin ©2020</Footer>
     </Layout>
   </Layout>
 );
