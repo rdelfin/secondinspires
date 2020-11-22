@@ -10,5 +10,6 @@ COPY . ./
 RUN npm run build
 
 FROM nginx:1.19-alpine
+COPY ./nginx.config /etc/nginx/nginx.template
 CMD ["/bin/sh", "-c", "envsubst < /etc/nginx/nginx.template > /etc/nginx/conf.d/default.conf && nginx -g 'daemon off;'"]
 COPY --from=builder /opt/web/build /usr/share/nginx/html
